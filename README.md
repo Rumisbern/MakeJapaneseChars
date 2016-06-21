@@ -6,7 +6,7 @@
 ## Requirement
 Ruby >= 2.1.0
 ## Usage
-`./jap_chars [-d "区切り文字"] -c 出力文字オプション -o 出力ファイル名 [出力形式オプション]`
+`ruby japs_chars [-d "区切り文字"] -c 出力文字オプション -o 出力ファイル名 [出力形式オプション]`
 
 区切り文字オプション(任意)
 * ダブルクオートで指定
@@ -51,3 +51,13 @@ Ruby >= 2.1.0
 出力形式オプション(任意かつ重複不可)
 * なし : 文字をUTF-8で出力(デフォルトでこの設定)
 * -U : 文字のUnicodeコードポイントを出力
+
+## Example
+* 区切り文字が空白
+* ひらがな・カタカナ小文字抜き，JIS漢字第1,第2水準
+* ファイル名'codepoints_hvkvxX.csv'
+* コードポイントとして出力
+`ruby japs_chars -d "\s" -c hvkvxX -o codepoints_hvkvxX.csv -U`
+
+## LICENSE
+MIT
