@@ -81,5 +81,5 @@ end
 
 # ファイル出力
 chars = output_chars(char_nums.flatten,format: output_type)
-puts chars = chars.inject{|memo,c| memo += (delimiter + c)}
+chars = chars.inject{|memo,c| memo += (delimiter + c)}
 File.write(params["o"],chars)
