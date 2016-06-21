@@ -58,7 +58,7 @@ Ruby >= 2.1.0
 * ファイル名'codepoints_hvkvxX.csv'
 * コードポイントとして出力
 
-`ruby japs_chars -d "\s" -c hvkvxX -o codepoints_hvkvxX.csv -U`
+`ruby japs_chars.rb -d "\s" -c hvkvxX -o codepoints_hvkvxX.csv -U`
 
 ## LICENSE
 MIT
