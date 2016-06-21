@@ -62,6 +62,10 @@ params["c"].each_char do |type|
   when "e" then char_types.push("katakana_extention")
   when "x" then char_types.push("jis_kanji_1")
   when "X" then char_types.push("jis_kanji_2")
+  when "m" then char_types.push("ascii_mark")
+  when "n" then char_types.push("num")
+  when "a" then char_types.push("alphabet_small")
+  when "A" then char_types.push("alphabet_big")
   else raise "-cオプションが不正"
   end
 end
@@ -77,5 +81,5 @@ end
 
 # ファイル出力
 chars = output_chars(char_nums.flatten,format: output_type)
-options = {:row_sep => "", :col_sep => delimiter}
-CSV.open(params["o"], "w", options) << chars
+puts chars = chars.inject{|memo,c| memo += (delimiter + c)}
+File.write(params["o"],chars)
