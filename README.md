@@ -57,6 +57,7 @@ Ruby >= 2.1.0
 * ひらがな・カタカナ小文字抜き，JIS漢字第1,第2水準
 * ファイル名'codepoints_hvkvxX.csv'
 * コードポイントとして出力
+
 `ruby japs_chars -d "\s" -c hvkvxX -o codepoints_hvkvxX.csv -U`
 
 ## LICENSE
