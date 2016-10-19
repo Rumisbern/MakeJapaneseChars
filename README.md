@@ -5,7 +5,15 @@
 
 ## Requirement
 Ruby >= 2.1.0
-## Usage
+### GUI版
+- Tcl/Tk
+    - 対応バージョンは不明．8.0にて確認
+- gem 'tk'
+    - 0.1.1にて確認
+
+## Usage (CUI)
+GUI版のほうが対応文字種が多いので，GUI版を推奨．
+
 `ruby japs_chars.rb [-d "区切り文字"] -c 出力文字オプション -o 出力ファイル名 [出力形式オプション]`
 
 区切り文字オプション(任意)
@@ -53,13 +61,18 @@ Ruby >= 2.1.0
 * なし : 文字をUTF-8で出力(デフォルトでこの設定)
 * -U : 文字のUnicodeコードポイントを出力
 
-## Example
+## Example (CUI)
 * 区切り文字が空白
 * ひらがな・カタカナ小文字抜き，JIS漢字第1,第2水準
 * ファイル名'codepoints_hvkvxX.csv'
 * コードポイントとして出力
 
 `ruby japs_chars.rb -d "\s" -c hvkvxX -o codepoints_hvkvxX.csv -U`
+
+## Usage (GUI)
+Ruby/tk が必要
+
+`ruby gui_japs_chars.rb`
 
 ## LICENSE
 MIT
