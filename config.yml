@@ -1,0 +1,41 @@
+config:
+  -
+    - 通常ひらがな('濁音・半濁音','繰り返し記号','縦書き文字'を含まない)
+    - hiragana_normal
+  -
+    - ひらがなの濁音・半濁音
+    - hiragana_voicing
+  -
+    - ひらがなの小文字
+    - hiragana_small
+  -
+    - 通常カタカナ('片仮名名句読点','つなぎおよび長音記号','繰り返し記号','縦書き合字'を含まない)
+    - katakana_normal
+  -
+    - カタカナの濁音・半濁音
+    - katakana_voicing
+  -
+    - カタカナの小文字
+    - katakana_small
+  -
+    - 片仮名拡張文字(アイヌ語表音拡張文字)
+    - katakana_extention
+  -
+    - JIS基本漢字の第一水準漢字(JIS X 0208の16区~47区)
+    - jis_kanji_1
+  -
+    - JIS基本漢字の第二水準漢字(JIS X 0208の48区~84区)
+    - jis_kanji_2
+  -
+    - ASCIIコード内の記号
+    - ascii_mark
+  -
+    - ASCIIコード内の半角数字
+    - num
+  -
+    - ASCIIコード内のアルファベット小文字
+    - alphabet_small
+  -
+    - ASCIIコード内のアルファベット大文字
+    - alphabet_big
+    
