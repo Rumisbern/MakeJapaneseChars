@@ -38,4 +38,22 @@ config:
   -
     - ASCIIコード内のアルファベット大文字
     - alphabet_big
+  -
+    - 全角アルファベット大文字
+    - full_width_ascii_alphabet_big
+  -
+    - 全角アルファベット小文字
+    - full_width_ascii_alphabet_small
+  - 
+    - 全角記号
+    - full_width_ascii_mark
+  -
+    - 全角数字
+    - full_width_num
+  -
+    - 半角カタカナ
+    - half_width_katakana
+  - 
+    - 半角ハングル
+    - half_width_hangul
     
