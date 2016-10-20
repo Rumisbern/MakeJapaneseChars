@@ -65,4 +65,7 @@ config:
   -
     - その他のCJK記号
     - cjk_other_symbols
+  -
+    - カタカナ記号(゠・ーヽヾヿ)
+    - katakana_marks
 
