@@ -45,17 +45,26 @@ config:
     - 全角アルファベット小文字
     - full_width_ascii_alphabet_small
   - 
-    - 全角記号
+    - 全角ascii記号
     - full_width_ascii_mark
   -
     - 全角数字
     - full_width_num
+  -
+    - 全角記号
+    - full_width_symbol
   -
     - 半角カタカナ
     - half_width_katakana
   - 
     - 半角ハングル
     - half_width_hangul
+  -
+    - 半角CJK句読点
+    - half_width_cjk_punctuation
+  -
+    - 半角記号
+    - half_width_symbol
   -
     - CJKの記号及び句読点('、' '。' '々'等を含む)
     - cjk_symbols_and_punctuation
@@ -81,14 +90,14 @@ config:
     - 基本ギリシャ文字
     - greek_basic_letter
   -
+    - 基本アラビア文字
+    - arabic
+  -
     - 数学記号
     - mathematical_operators
   -
     - ラテン1句読点と記号
     - latin-1_punctuation_and_symbols
-  -
-    - 半角CJK句読点
-    - half_width_cjk_punctuation
   -
     - 星とハートと音符
     - star_and_heart_and_notes
