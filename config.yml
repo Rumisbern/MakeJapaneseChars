@@ -114,6 +114,9 @@ config:
     - Spacing Modifier Letters
     - spacing_modifier_letters
   -
+    - IPA拡張
+    - ipa_extension
+  -
     - その他の技術用記号
     - miscellaneous_technical
   -
