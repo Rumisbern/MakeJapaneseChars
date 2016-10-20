@@ -114,5 +114,8 @@ config:
     - Spacing Modifier Letters
     - spacing_modifier_letters
   -
+    - その他の技術用記号
+    - miscellaneous_technical
+  -
     - ダイアクリティカル・マーク(合成可能)
     - combining_diacritical_marks
