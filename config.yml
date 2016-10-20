@@ -93,6 +93,12 @@ config:
     - 基本アラビア文字
     - arabic
   -
+    - 基本タイ語
+    - thai
+  -
+    - 基本アルメニア語
+    - armenian
+  -
     - 数学記号
     - mathematical_operators
   -
