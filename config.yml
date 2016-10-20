@@ -113,4 +113,6 @@ config:
   -
     - Spacing Modifier Letters
     - spacing_modifier_letters
-
+  -
+    - ダイアクリティカル・マーク(合成可能)
+    - combining_diacritical_marks
