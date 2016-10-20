@@ -74,4 +74,10 @@ config:
   -
     - 一般句読点の空白
     - general_punctuation_space
-
+  -
+    - 基本ロシア語アルファベット(キリル文字)
+    - basic_russian_alphabet
+  -
+    - 基本ギリシャ文字
+    - greek_basic_letter
+    
