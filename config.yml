@@ -68,4 +68,10 @@ config:
   -
     - カタカナ記号(゠・ーヽヾヿ)
     - katakana_marks
+  -
+    - 一般句読点(空白を除く)
+    - general_punctuation
+  -
+    - 一般句読点の空白
+    - general_punctuation_space
 
