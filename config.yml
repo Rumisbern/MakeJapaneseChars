@@ -80,4 +80,22 @@ config:
   -
     - 基本ギリシャ文字
     - greek_basic_letter
-    
+  -
+    - 数学記号
+    - mathematical_operators
+  -
+    - ラテン1句読点と記号
+    - latin-1_punctuation_and_symbols
+  -
+    - 半角CJK句読点
+    - half_width_cjk_punctuation
+  -
+    - 星とハートと音符
+    - star_and_heart_and_notes
+  -
+    - Geometric Shapes
+    - geometric_shapes
+  -
+    - Spacing Modifier Letters
+    - spacing_modifier_letters
+
