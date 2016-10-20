@@ -22,7 +22,8 @@ def make_check_button(f, var, text, value: true, offvalue: false)
                     text: text,
                     onvalue: value,
                     offvalue: offvalue,
-                    variable: var).pack(anchor: :w)
+                    variable: var
+                   ).pack(anchor: :w)
 end
 
 def getsavefile
@@ -35,7 +36,7 @@ def variable_values(var)
 end
 
 def file_save_and_exit(variables, file_path, format, delimiter)
-  chars = codepoints_from_file_names(variables.map{|v| v.value}, format: format)
+  chars = codepoints_from_file_names(variables, format: format)
   chars = chars.inject{|memo,c| memo += (delimiter + c)}
   File.write(file_path, chars)
   exit
@@ -45,15 +46,22 @@ root = TkRoot.new do
   title 'Make Japanese Chars GUI'
   #geometry '900x600'
 end
+
 frame_char = TkFrame.new(root)
+vbar = TkScrollbar.new(frame_char)
 frame_format = TkFrame.new(root)
 frame_delimiter = TkFrame.new(root)
 
-config = YAML.load_file(config_file_path)['config']
-variables = Array.new(config.size).map{ TkVariable.new(" ") }
-config.each_with_index do |ele,i|
-  make_check_button(frame_char, variables[i], ele[0], value: ele[1])
-end
+
+config = Hash[*YAML.load_file(config_file_path)['config'].flatten]
+listbox = TkListbox.new(frame_char,
+                        height: 10,
+                        width: 70,
+                        selectmode: 'multiple',
+                        yscrollcommand: proc{|first,last| vbar.set(first, last)}
+                       ).pack(side: 'left', fill: 'both')
+listbox.insert('end', *config.keys)
+
 
 TkLabel.new(frame_delimiter, text: "区切り文字設定").pack(anchor: :w)
 var_delimiter = TkVariable.new("\s")
@@ -70,16 +78,16 @@ make_radio_button(frame_format, var_format, "Unicodeのコードポイントを�
 
 var = TkVariable.new('')
 button = TkButton.new(root,'text' => '出力する')
-
 button.command(proc{
                  var.value = getsavefile
                  if var.value != ""
-                   file_save_and_exit(variable_values(variables),
+                   file_save_and_exit(listbox.curselection.map{|i| config.values[i]},
                                       var.value,
                                       var_format.value,
                                       var_delimiter.value)
                  end
                })
+
 frame_char.pack
 frame_delimiter.pack(fill: 'x')
 frame_format.pack(fill: 'x')
