@@ -56,4 +56,13 @@ config:
   - 
     - 半角ハングル
     - half_width_hangul
-    
+  -
+    - CJKの記号及び句読点('、' '。' '々'等を含む)
+    - cjk_symbols_and_punctuation
+  -
+    - CJK括弧
+    - cjk_brackets
+  -
+    - その他のCJK記号
+    - cjk_other_symbols
+
