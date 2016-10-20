@@ -122,3 +122,7 @@ config:
   -
     - ダイアクリティカル・マーク(合成可能)
     - combining_diacritical_marks
+  -
+    - 音声記号拡張
+    - phonetic_extensions
+    
