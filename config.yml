@@ -9,6 +9,9 @@ config:
     - ひらがなの小文字
     - hiragana_small
   -
+    - ひらがなの記号系('゛'や'ゞ'など)
+    - hiragana_marks
+  -
     - 通常カタカナ('片仮名名句読点','つなぎおよび長音記号','繰り返し記号','縦書き合字'を含まない)
     - katakana_normal
   -
@@ -128,4 +131,6 @@ config:
   -
     - 罫線素片
     - box_drawing
-
+  -
+    - 矢印
+    - symbol_arrow
