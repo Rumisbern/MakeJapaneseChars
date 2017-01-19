@@ -125,4 +125,7 @@ config:
   -
     - 音声記号拡張
     - phonetic_extensions
-    
+  -
+    - 罫線素片
+    - box_drawing
+
