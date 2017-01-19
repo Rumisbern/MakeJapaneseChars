@@ -3,6 +3,18 @@ require 'tk'
 require 'yaml'
 require_relative 'csv_reader'
 
+class String
+  def to_bool
+    if self =~ /^(true|false)$/
+      return true if $1 == 'true'
+      return false if $1 == 'false'
+    else
+      return false if self == "0"
+      return true
+    end
+  end
+end
+
 config_file_path = 'config.yml'
 
 def make_radio_button(f,var,text,value,anchor: false)
@@ -35,8 +47,8 @@ def variable_values(var)
   return var.select{|v| v.value != " " && v.value != "0" }
 end
 
-def file_save_and_exit(variables, file_path, format, delimiter)
-  chars = codepoints_from_file_names(variables, format: format)
+def file_save_and_exit(variables, file_path, format, delimiter, unique)
+  chars = codepoints_from_file_names(variables, format: format, unique: unique)
   chars = chars.inject{|memo,c| memo += (delimiter + c)}
   File.write(file_path, chars)
   exit
@@ -51,6 +63,7 @@ frame_char = TkFrame.new(root)
 vbar = TkScrollbar.new(frame_char)
 frame_format = TkFrame.new(root)
 frame_delimiter = TkFrame.new(root)
+frame_unique = TkFrame.new(root)
 
 
 config = Hash[*YAML.load_file(config_file_path)['config'].flatten]
@@ -75,6 +88,8 @@ var_format = TkVariable.new("UTF-8")
 make_radio_button(frame_format, var_format, "UTF-8で文字を出力する", "UTF-8", anchor: :w)
 make_radio_button(frame_format, var_format, "Unicodeのコードポイントを出力する", "Unicode", anchor: :w)
 
+var_unique = TkVariable.new(false)
+make_check_button(frame_unique,var_unique,"重複したコードポイントを削除する")
 
 var = TkVariable.new('')
 button = TkButton.new(root,'text' => '出力する')
@@ -84,13 +99,15 @@ button.command(proc{
                    file_save_and_exit(listbox.curselection.map{|i| config.values[i]},
                                       var.value,
                                       var_format.value,
-                                      var_delimiter.value)
+                                      var_delimiter.value,
+                                      var_unique.value.to_bool)
                  end
                })
 
 frame_char.pack
 frame_delimiter.pack(fill: 'x')
 frame_format.pack(fill: 'x')
+frame_unique.pack(fill: 'x')
 button.pack
 
 Tk.mainloop

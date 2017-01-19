@@ -17,8 +17,10 @@ def file_paths_from_file_names(file_names)
 end
 
 # ファイルのパスの配列からコードポイントの配列を返す
-def codepoints(file_paths)
-  return file_paths.map{|fp| read_csv(fp) }.flatten
+def codepoints(file_paths, unique: False)
+  cps = file_paths.map{|fp| read_csv(fp) }.flatten
+  cps.uniq! if unique
+  return cps
 end
 
 # コードポイントの配列から指定した形式の配列で返す
@@ -39,9 +41,9 @@ def read_csv(path)
 end
 
 # ファイル名の配列からコードポイントを指定した形式の配列で返す
-def codepoints_from_file_names(file_names, format: 'UTF-8')
+def codepoints_from_file_names(file_names, format: 'UTF-8', unique: False)
   fp = file_paths_from_file_names(file_names)
-  cp = codepoints(fp)
+  cp = codepoints(fp, unique: unique)
   return output_chars(cp, format: format)
 end
 
